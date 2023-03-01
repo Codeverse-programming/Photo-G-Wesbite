@@ -1,0 +1,548 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Rubik', sans-serif;
+}
+
+.page-wrapper {
+    overflow: hidden;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.closebtn {
+    display: none;
+}
+
+#closebtn {
+    display: none;
+}
+
+header .containers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    max-width: 100%;
+    width: 100%;
+    background-color: white;
+    z-index: 1;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    padding: 2% 7% 2%;
+}
+
+.header {
+    position: fixed;
+    left: 0;
+    top: 0%;
+    width: 100%;
+    z-index: 2;
+}
+
+/* this is for the background color beneath the body. it gives a clear color difference from the nav menu list color */
+.header::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100px;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    ;
+    z-index: -1;
+    transform: translateY(calc(-100% - 10px));
+    transition: transform 0.5s ease;
+}
+
+/* it make my content scrollable and the menu list remain unmoved..inline with the javascript */
+.header.bg-reveal::before {
+    transform: translateY(0)
+}
+
+.containers nav {
+    text-align: center;
+    flex: 1;
+}
+
+.containers nav ul li {
+    display: inline-block;
+    padding: 0 5% 0;
+}
+
+.containers nav ul li a {
+    font-family: 'Rubik', sans-serif;
+    color: black;
+    font-weight: 400;
+    font-size: 1.3rem;
+    position: relative;
+    text-decoration: none;
+}
+
+.containers nav ul li a.active {
+    color: midnightblue;
+    font-weight: bold;
+}
+
+.containers nav ul li a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: orange;
+    transition: width 0.5s;
+}
+
+.containers nav ul li a:hover::before {
+    width: 100%;
+}
+
+.logo h1 span img {
+    width: 30px;
+}
+
+.logo h1 .photo-g {
+    background: -webkit-linear-gradient(orangered, royalblue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.3rem;
+}
+
+.logo h1 {
+    font-size: 2rem;
+    font-family: 'Rubik', sans-serif;
+    font-weight: bold;
+}
+
+
+.account p {
+    font-size: 1.3rem;
+}
+
+/* HERO SECTION */
+
+.hero-section {
+    padding: 200px 0 0;
+}
+
+.hero-img img {
+    transform: rotateY(180deg);
+    width: 100%;
+}
+
+.hero-img {
+    position: relative;
+}
+
+.hero-img .back {
+    position: absolute;
+    top: 0%;
+    /* left: 0; */
+    right: -20%;
+    bottom: 0;
+    content: '';
+    opacity: .4;
+    /* z-index: 1; */
+    width: 100%;
+    height: 100%;
+    background: palevioletred;
+    border-radius: 10px;
+    transform: rotate(10deg);
+}
+
+.hero-text h1 {
+    font-size: 4rem;
+    font-weight: bolder;
+    padding-bottom: 5%;
+}
+
+.hero-text p {
+    font-size: 1.9rem;
+    padding-bottom: 5%;
+}
+
+.hero-text .btn a button {
+    background-color: black;
+    border: none;
+    padding: 20px 50px;
+    border-radius: 50px;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+.hero-text .btn a button i {}
+
+/* HERO SECTION */
+
+/* UNIQUE SECTION */
+.unique-section {}
+
+.heading h1 {
+    font-weight: bold;
+    font-size: 2.5rem;
+    padding-bottom: 3%;
+}
+
+.heading p {
+    font-size: 1.3rem;
+    padding-bottom: 3%;
+}
+
+.unique-btn a button {
+    background: transparent;
+    border: 3px solid black;
+    padding: 20px 50px;
+    border-radius: 50px;
+    color: black;
+    font-size: 1.3rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    font-weight: 400;
+}
+
+/* The overlay effect (full height and width) - lays on top of the container and over the image */
+.layover {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    padding-top: 15%;
+    opacity: 0;
+    transition: .3s ease;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    background-color: rgb(0, 0, 0);
+    /* Black fallback color */
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* When you mouse over the container, fade in the overlay icon*/
+.card-image:hover .layover {
+    opacity: 1;
+}
+
+.layover .btn p {
+    background: transparent;
+    border: 3px solid black;
+    padding: 10px 20px;
+    border-radius: 50px;
+    color: white;
+    font-size: 1.3rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    font-weight: 400;
+}
+
+.layover .btn {
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.layover #btn p {
+    background-color: brown;
+    border: none;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: black;
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    /* background-color: #fefefe; */
+    margin: auto;
+    padding: 0;
+    width: 90%;
+    max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #999;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Hide the slides by default */
+.mySlides {
+    display: none;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* Caption text */
+.caption-container {
+    text-align: center;
+    background-color: black;
+    padding: 2px 16px;
+    color: white;
+}
+
+img.demo {
+    /* opacity: 0.6; */
+}
+
+.active,
+.demo:hover {
+    opacity: 1;
+}
+
+img.hover-shadow {
+    transition: 0.3s;
+}
+
+.hover-shadow:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* UNIQUE SECTION */
+
+/* PACKAGES SECTION */
+.packages-section {
+    padding: 150px 0 60px;
+}
+
+.package-img {
+    position: relative;
+}
+
+.package-img img {
+    width: 300px;
+    height: 290px;
+    /* width: 70px; */
+    border-radius: 50%;
+}
+
+/* .package-img .img-1 {
+    margin: 5%;
+    position: absolute;
+    transform: translate(105%, 20%);
+}
+.package-img .img-2 {
+    position: absolute;
+    transform: translate(-15%, -30%);
+    margin: 5%;
+}
+.package-img .img-3 {
+    position: absolute;
+    transform: translate(-10%, 80%);
+    margin: 5%;
+} */
+.img-2{
+    margin-left: 15%;
+}
+.img-3{
+    text-align: center;
+    margin: 0 auto;
+}
+.package-text h1{
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+.package-text p{
+    font-size: 1.3rem;
+}
+.package-text .btn a button {
+    background-color: black;
+    border: none;
+    padding: 20px 50px;
+    border-radius: 50px;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+/* .package-img .lay-overs {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: black;
+    border-radius: 10px;
+    padding: 100px;
+} */
+/* PACKAGES SECTION */
+
+/* FOOTER SECTION */
+footer{
+    background-color: black;
+    padding: 100px 0 60px;
+}
+.footer-container hr{
+    background-color: white;
+    margin: 5% 0 5%;
+}
+.footer-container h5{
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding-bottom: 3%;
+}
+.footer-container p a{
+    text-decoration: none;
+    color: white;
+    line-height: 2;
+}
+.footer-script p{
+    color: white;
+}
+.icons a i{
+    color: white;
+    font-size: 2rem;
+}
+.icons a{
+    text-decoration: none;
+}
+.icons h6{
+    color: white;
+}
+/* FOOTER SECTION */
+
+@media only screen and (max-width:991px) {
+    .containers nav ul {
+        display: block;
+        position: fixed;
+        background-color: rgb(0, 0, 0);
+        /* Black fallback color */
+        background-color: rgba(0, 0, 0, 0.9);
+        height: 0%;
+        width: 100%;
+        top: -100%;
+        left: 0%;
+        margin-left: 0;
+        z-index: 1;
+        /* overflow-y: auto; */
+        padding-bottom: 100px;
+        transition: 0.5s;
+        /* transition: all 0.3s ease; */
+    }
+
+    .containers nav #show-burger:checked~ul {
+        top: 0%;
+        height: 100%;
+    }
+
+    .containers nav ul li {
+        position: relative;
+        top: 25%;
+        /* 25% from the top */
+        width: 100%;
+        /* 100% width */
+        text-align: center;
+        /* Centered text/links */
+        margin-top: 30px;
+        /* 30px top margin to avoid conflict with the close button on smaller screens */
+        padding: 8px;
+        text-decoration: none;
+        font-size: 36px;
+        display: block;
+        /* Display block instead of inline */
+        transition: 0.3s;
+        /* Transition effects on hover (color) */
+    }
+
+    .containers nav ul li a {
+        color: white;
+    }
+
+    #closebtn {
+        display: flex;
+    }
+
+    .containers nav .style-close {
+        position: absolute;
+        top: 25px;
+        right: 55px;
+        font-size: 2rem;
+        color: white;
+    }
+
+    .account {
+        margin-right: 2%;
+    }
+}
+
+@media only screen and (max-width:991px) {
+    .layover .btn p {
+        padding: 5px 10px;
+        font-size: 1rem;
+    }
+
+    .layover {
+        padding-top: 10%;
+    }
+}
