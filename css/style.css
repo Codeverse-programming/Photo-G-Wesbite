@@ -546,3 +546,41 @@ footer{
         padding-top: 10%;
     }
 }
+@media only screen and (max-width:414px) {
+    .logo a img{
+        width: 80%;
+    }
+    .account{
+        padding-top: 5%;
+    }
+    .account p{
+        font-size: 1rem;
+    }
+.hero-section{
+    padding: 100px 0 0;
+}
+.packages-section{
+    padding: 100px 0 60px;
+}
+.hero-text h1{
+    font-size: 3rem;
+}
+.hero-text p{
+    font-size: 1.3rem;
+    padding-bottom: 2%;
+}
+.hero-text .btn a button{
+    padding: 10px 10px;
+}
+.hero-img{
+    margin-top: 10%;
+}
+.hero-img .back{
+    position: absolute;
+    right: 0%;
+    transform: rotate(0deg);
+}
+.hero-img img{
+    padding-top: 3%;
+}
+}
